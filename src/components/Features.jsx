@@ -11,7 +11,7 @@ const Features = () => {
           <div className="center">
             <h3>Jouer</h3>
             <p>
-              Place le plus de pixels tout au long de la la partie pour tenter
+              Place le plus de pixels tout au long de la partie pour tenter
               de remporter la récompense ! Une seule règle : un pixel est
               personnel, vous pouvez placer un pixel toutes les minutes maximum
             </p>
@@ -34,7 +34,7 @@ const Features = () => {
             <h3>Gagner du terrain</h3>
             <p>
               Pour être éligible au tirage au sort et tenter de gagner le lot
-              gagnant, il te faudra gagner au moins 10 coins au cours la semaine
+              gagnant, il te faudra gagner au moins 10 coins au cours de la semaine
               de jeu !
             </p>
           </div>

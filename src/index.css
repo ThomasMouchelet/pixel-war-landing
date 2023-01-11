@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+button:hover{
+  opacity: .8;
+}
+
+input{
+  outline: none;
+  opacity: .8;
+  transition: all .3s ease-in-out;
+}
+input:focus{
+  opacity: 1;
+}
