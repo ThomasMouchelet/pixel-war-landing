@@ -1,0 +1,43 @@
+.formulaire {
+  height: 600px;
+  background: url(../../assets/background-form.png);
+  background-size: cover;
+  padding-top: 200px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: $main_font;
+  font-weight: 900;
+  flex-direction: column;
+  text-align: center;
+
+  h2 {
+    font-size: 25px;
+  }
+}
+.input-form {
+  background: transparent;
+  padding: 12px 100px 12px 20px;
+  border: none;
+  border-bottom: 1px solid $main_color;
+  width: 300px;
+  color: $white;
+  font-size: 17px;
+}
+.input-form::placeholder {
+  color: $white;
+  font-size: 17px;
+}
+@media (max-width: 768px) {
+  .formulaire {
+    background: none;
+  }
+  .input-form {
+    padding: 0px 20px 12px 0px;
+    text-align: center;
+  }
+  .input-form::placeholder {
+    text-align: center;
+  }
+}

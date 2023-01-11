@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Unicode-black";
+    src: url("../../assets/Unibody_8_Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Unicode-bold";
+    src: url("../../assets/Unibody_8_Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gantari";
+    src: url('https://fonts.googleapis.com/css2?family=Gantari:wght@200;300;400;700;900&display=swap');
+}
+
+$main_pixel_font: "Unicode-black", sans-serif;
+$secondary_pixel_font: "Unicode-bold", sans-serif;
+
+$main_font: "Gantari", sans-serif;
