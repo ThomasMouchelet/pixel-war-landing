@@ -8,8 +8,12 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="logo">
-        <img src={Esd} alt="" />
-        <img src={Esp} alt="" />
+        <a href="https://ecole-du-digital.com/" target={'_blank'}>
+          <img src={Esd} alt="" />
+        </a>
+        <a href="https://espub.org/" target={'_blank'}>
+          <img src={Esp} alt="" />
+        </a>
         <div className="txt">
           <h2>PIXEL WAR</h2>
           <p>© 2023 - Digital Event</p>
