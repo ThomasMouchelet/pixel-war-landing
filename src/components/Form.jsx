@@ -6,6 +6,7 @@ const Form = () => {
   const [credentials, setCredentials] = useState({})
 
   const [error, setError] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -15,6 +16,7 @@ const Form = () => {
       [name]: value
     })
     setError(false)
+    setSuccess(false)
   }
 
   const handleSubmit = (e) => {
@@ -29,15 +31,18 @@ const Form = () => {
       .then(() => {
         console.log("user created successfully");
         setCredentials({})
+        setSuccess(true)
       })
       .catch((error) => {
         console.log(error.message)
         setError(true)
+        setSuccess(false)
       })
     })
     .catch((error) => {
       console.log(error.message)
       setError(true)
+      setSuccess(false)
     });
   }
 
@@ -75,6 +80,7 @@ const Form = () => {
       <button>S'inscrire</button>
 
       {error ? <p>Une erreur s'est produite. Veuillez réesayer plus tard 😢</p> : null}
+      {success ? <p>Bienvenue ! Ton compte a bien était créé ! 🎉</p> : null}
     </form>
   );
 };
