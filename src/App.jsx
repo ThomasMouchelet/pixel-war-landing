@@ -7,13 +7,13 @@ import Form from "./components/Form";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Features />
-      <Reward />
-      <Form />
-      <Footer />
-    </div>
+      <div className="App">
+        <Header />
+        <Features />
+        <Reward />
+        <Form />
+        <Footer />
+      </div>
   );
 }
 

@@ -1,12 +1,29 @@
 import star from "../assets/icons/Star.png";
 import smiley from "../assets/icons/smiley.png";
 import ghost from "../assets/icons/ghost.png";
+import { useRef, useEffect } from "react";
+import gsap from 'gsap';
+
 const Features = () => {
+  const firstCard = useRef(null);
+  const secondCard = useRef(null);
+  const thirdCard = useRef(null);
+
+  const handleAnimation = () => {
+    gsap.fromTo(firstCard.current, {opacity: 0}, {opacity: 100, ease:"power4.in", duration:2});
+    gsap.fromTo(secondCard.current, {opacity: 0}, {opacity: 100, ease:"power4.in", duration:2, delay: 0.5});
+    gsap.fromTo(thirdCard.current, {opacity: 0}, {opacity: 100, ease:"power4.in", duration:2, delay:1});
+  }
+
+  useEffect(() => {
+    handleAnimation();
+  }, []);
+
   return (
     <div className="content">
       <h2>Le concept</h2>
       <div className="cards">
-        <div className="card">
+        <div className="card" ref={firstCard}>
           <img className="image-size " src={star} alt="" />
           <div className="center">
             <h3>Jouer</h3>
@@ -17,7 +34,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="card">
+        <div className="card" ref={secondCard}>
           <img className="image-size " src={smiley} alt="" />
           <div className="center">
             <h3>Créer</h3>
@@ -28,7 +45,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="card">
+        <div className="card" ref={thirdCard}>
           <img className="image-size " src={ghost} alt="" />
           <div className="center">
             <h3>Gagner du terrain</h3>
