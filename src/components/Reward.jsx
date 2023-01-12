@@ -15,29 +15,45 @@ const Reward = () => {
   const airpodLeftContainer = useRef(null);
 
   const handleAnimation = () => {
+    gsap.from(".right-content", {opacity: 0})
+    gsap.to(".right-content", {opacity: 100})
     gsap.to("#firstInputRef", {opacity: 100, ease: "power4.in", duration: 1.5, scrollTrigger: {
       trigger: '#firstInputRef',
       start: '0px center',
       end: '300px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
     }});
     gsap.to("#secondInputRef", {opacity: 100, ease: "power4.in", duration: 1.5, delay: 0.5, scrollTrigger: {
       trigger: '#secondInputRef',
       start: '0px center',
       end: '300px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
     }});
     gsap.to("#thirdInputRef", {opacity: 100, ease: "power4.in", duration: 1.5, delay: 1, scrollTrigger: {
       trigger: '#thirdInputRef',
       start: '0px center',
       end: '300px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
     }});
-    gsap.to(airpodRightContainer.current, {y:-40, x:10, opacity:100, ease: "power4.in", duration: 1.25});
-    gsap.to(airpodLeftContainer.current, {y:40, x:-10, opacity:100, ease: "power4.in", duration: 1.25});
+    gsap.from("#airpodRightContainer", {y:0, x:20, opacity:0})
+    gsap.to("#airpodRightContainer", {y:-40, x:10, opacity:100, ease: "power4.in", duration: 1.25, scrollTrigger: {
+      trigger: '#airpodRightContainer',
+      start: '-100px center',
+      end: '200px center',
+      scrub:0.5,
+      markers: false,
+    }});
+    gsap.from("#airpodLeftContainer", {y:0, x:20, opacity:0})
+    gsap.to("#airpodLeftContainer", {y:40, x:-10, opacity:100, ease: "power4.in", duration: 1.25, scrollTrigger: {
+      trigger: '#airpodRightContainer',
+      start: '-100px center',
+      end: '300px center',
+      scrub:0.5,
+      markers: false,
+    }});
   };
 
 
@@ -67,8 +83,8 @@ const Reward = () => {
         </div>
       </div>
       <div className="right-content">
-        <div className="airpod-left-container" ref={airpodRightContainer}><img src={airpodLeft} alt="" className="airpod" /></div>
-        <div className="airpod-right-container" ref={airpodLeftContainer}><img src={airpodRight} alt="" className="airpod" /></div>
+        <div className="airpod-left-container" ref={airpodRightContainer} id="airpodRightContainer"><img src={airpodLeft} alt="" className="airpod" /></div>
+        <div className="airpod-right-container" ref={airpodLeftContainer} id="airpodLeftContainer"><img src={airpodRight} alt="" className="airpod" /></div>
       </div>
     </div>
   );

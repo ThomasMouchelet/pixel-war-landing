@@ -62,21 +62,31 @@ const Form = () => {
       start: '0px center',
       end: '120px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
     }});
     gsap.to("#email", {opacity: 100, ease: "power4.in", duration:1, scrollTrigger: {
       trigger: '#email',
       start: '0px center',
       end: '100px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
     }});
     gsap.to("#phone", {opacity: 100, ease: "power4.in", duration:1, scrollTrigger: {
       trigger: '#phone',
       start: '-45px center',
       end: '0px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
+    }});
+
+    gsap.from('.form-input-submit', {opacity: 0})
+
+    gsap.to(".form-input-submit", {opacity: 100, ease: "bounce.easeInOut", duration:1, scrollTrigger: {
+      trigger: '.form-input-submit',
+      start: '-80px center',
+      end: '0px center',
+      scrub:0.5,
+      markers: false,
     }});
   }
 

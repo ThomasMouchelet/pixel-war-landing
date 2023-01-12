@@ -9,12 +9,12 @@ const Header = () => {
   const logoRef = useRef(null);
 
   const handleAnimate = () => {
-    gsap.to(logoRef.current, {y: 10, ease: 'bounce.easeInOut', duration: 0.75, scrollTrigger: {
-      trigger: '#header-app',
+    gsap.to(".main-img", {y: 20, ease: 'bounce.easeInOut', duration: 0.75, scrollTrigger: {
+      trigger: '.App',
       start: '0px center',
       end: '200px center',
       scrub:1,
-      markers: true,
+      markers: false,
     }})
   };
 

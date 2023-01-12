@@ -12,26 +12,29 @@ const Features = () => {
   const thirdCard = useRef(null);
 
   const handleAnimation = () => {
-    gsap.to("#firstCard", {opacity: 100, ease:"power4.in", duration:2, scrollTrigger: {
-      trigger: '#firstCard',
-      start: '0px center',
-      end: '300px center',
+    gsap.from("#firstCard", {opacity:0})
+    gsap.to("#firstCard", {opacity: 100, ease:"power4.in", duration:1, scrollTrigger: {
+      trigger: '.content',
+      start: '-100px center',
+      end: '200px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
     }});
-    gsap.to("#secondCard", {opacity: 100, ease:"power4.in", duration:2, delay:1, scrollTrigger: {
-      trigger: '#secondCard',
-      start: '0px center',
-      end: '300px center',
+    gsap.from("#secondCard", {opacity:0})
+    gsap.to("#secondCard", {opacity: 100, ease:"power4.in", duration:1, delay:4, scrollTrigger: {
+      trigger: '#conceptTitle',
+      start: '-100px center',
+      end: '200px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
     }});
-    gsap.to("#thirdCard", {opacity: 100, ease:"power4.in", duration:2, delay:2, scrollTrigger: {
+    gsap.from("#thirdCard", {opacity:0})
+    gsap.to("#thirdCard", {opacity: 100, ease:"power4.in", duration:1, delay:8, scrollTrigger: {
       trigger: '#thirdCard',
-      start: '0px center',
-      end: '300px center',
+      start: '-100px center',
+      end: '200px center',
       scrub:0.5,
-      markers: true,
+      markers: false,
     }});
   }
 
@@ -41,7 +44,7 @@ const Features = () => {
 
   return (
     <div className="content">
-      <h2>Le concept</h2>
+      <h2 id="conceptTitle">Le concept</h2>
       <div className="cards">
         <div className="card" ref={firstCard} id="firstCard">
           <img className="image-size " src={star} alt="" />
