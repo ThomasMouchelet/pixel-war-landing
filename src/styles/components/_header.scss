@@ -62,9 +62,13 @@
 .main-img {
   width: 200px;
 }
+.signup-btn {
+  opacity: 0;
+}
 @media (max-width: 768px) {
   .title-timer {
     width: 200px;
     text-align: center;
+    padding: 1rem 0;
   }
 }

@@ -5,24 +5,29 @@ import Instagram from "../assets/footer/logo-instagram.png";
 import Facebook from "../assets/footer/logo-fb.png";
 
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <div className="footer">
-      <div className="logo">
-        <a href="https://ecole-du-digital.com/" target={'_blank'}>
-          <img src={Esd} alt="" />
-        </a>
-        <a href="https://espub.org/" target={'_blank'}>
-          <img src={Esp} alt="" />
-        </a>
+      <div className="mobile-social-media">
         <div className="txt">
           <h2>PIXEL WAR</h2>
-          <p>© 2023 - Digital Event</p>
-          <p>Team Pixel War</p>
+          <p>
+            © {year} - Digital Event - <span>Team Pixel War</span>
+          </p>
+        </div>
+        <div className="logo">
+          <a href="https://ecole-du-digital.com/" target={"_blank"}>
+            <img src={Esd} alt="" />
+          </a>
+          <a href="https://espub.org/" target={"_blank"}>
+            <img src={Esp} alt="" />
+          </a>
+          <a href="https://newgo.io/" target={"_blank"}>
+            <img src={Newgo} alt="" />
+          </a>
         </div>
       </div>
-      <a href="https://newgo.io/" target={"_blank"}>
-        <img src={Newgo} alt="" />
-      </a>
       <div className="social-media">
         <a href="https://www.instagram.com/esd_ecole" target={"_blank"}>
           <img src={Instagram} alt="" />
