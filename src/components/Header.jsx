@@ -39,7 +39,7 @@ const Header = () => {
         <img className="main-img" src={MainLogo} alt="" ref={logoRef} />
       </div>
       <div className="timer-container">
-        <p className="title-timer">La prochaine partie commence dans :</p>
+        <p className="title-timer">Début de la guerre dans :</p>
         <Timer hours={hours} minutes={minutes} seconds={seconds} setHours={setHours} setMinutes={setMinutes} setSeconds={setSeconds}/>
         <a href="#form">
           {

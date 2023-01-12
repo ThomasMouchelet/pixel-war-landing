@@ -6,6 +6,7 @@
   height: 100px;
   margin-top: 250px;
 }
+
 .txt {
   display: flex;
   align-items: center;
@@ -14,13 +15,21 @@
   line-height: 0.3;
 }
 
-.txt > p {
+.txt>p {
   padding: 0 1rem;
 }
+
 .social-media {
   display: flex;
-
+  align-items: center;
   gap: 20px;
+
+  a {
+    img {
+      width: 38px;
+      height: 38px;
+    }
+  }
 }
 
 
