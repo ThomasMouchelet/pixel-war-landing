@@ -20,21 +20,21 @@ const Reward = () => {
     gsap.to("#firstInputRef", {opacity: 100, ease: "power4.in", duration: 1.5, scrollTrigger: {
       trigger: '#firstInputRef',
       start: '0px center',
-      end: '300px center',
+      end: '150px center',
       scrub:0.5,
       markers: false,
     }});
     gsap.to("#secondInputRef", {opacity: 100, ease: "power4.in", duration: 1.5, delay: 0.5, scrollTrigger: {
       trigger: '#secondInputRef',
       start: '0px center',
-      end: '300px center',
+      end: '150px center',
       scrub:0.5,
       markers: false,
     }});
     gsap.to("#thirdInputRef", {opacity: 100, ease: "power4.in", duration: 1.5, delay: 1, scrollTrigger: {
       trigger: '#thirdInputRef',
       start: '0px center',
-      end: '300px center',
+      end: '150px center',
       scrub:0.5,
       markers: false,
     }});

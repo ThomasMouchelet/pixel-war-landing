@@ -5,6 +5,7 @@ import { useState } from "react";
 import gsap from 'gsap';
 import { useEffect, useRef } from "react";
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import Video from "./Video/Video";
 gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
@@ -33,6 +34,7 @@ const Header = () => {
   }, [])
   return (
     <header id="header-app">
+      <Video />
       <div className="title-container">
         <img className="main-img" src={MainLogo} alt="" ref={logoRef} />
       </div>

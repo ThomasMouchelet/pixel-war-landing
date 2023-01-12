@@ -2,8 +2,8 @@ import star from "../assets/icons/Star.png";
 import smiley from "../assets/icons/smiley.png";
 import ghost from "../assets/icons/ghost.png";
 import { useRef, useEffect } from "react";
-import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Features = () => {
@@ -12,31 +12,52 @@ const Features = () => {
   const thirdCard = useRef(null);
 
   const handleAnimation = () => {
-    gsap.from("#firstCard", {opacity:0})
-    gsap.to("#firstCard", {opacity: 100, ease:"power4.in", duration:1, scrollTrigger: {
-      trigger: '.content',
-      start: '-100px center',
-      end: '200px center',
-      scrub:0.5,
-      markers: false,
-    }});
-    gsap.from("#secondCard", {opacity:0})
-    gsap.to("#secondCard", {opacity: 100, ease:"power4.in", duration:1, delay:4, scrollTrigger: {
-      trigger: '#conceptTitle',
-      start: '-100px center',
-      end: '200px center',
-      scrub:0.5,
-      markers: false,
-    }});
-    gsap.from("#thirdCard", {opacity:0})
-    gsap.to("#thirdCard", {opacity: 100, ease:"power4.in", duration:1, delay:8, scrollTrigger: {
-      trigger: '#thirdCard',
-      start: '-100px center',
-      end: '200px center',
-      scrub:0.5,
-      markers: false,
-    }});
-  }
+    gsap.from("#firstCard", { opacity: 0, y: 75 });
+    gsap.to("#firstCard", {
+      opacity: 100,
+      y: 0,
+      ease: "power4.in",
+      duration: 1,
+      delay: 0,
+      scrollTrigger: {
+        trigger: ".content",
+        start: "-100px center",
+        end: "200px center",
+        scrub: 0.5,
+        markers: false,
+      },
+    });
+    gsap.from("#secondCard", { opacity: 0, y: 75 });
+    gsap.to("#secondCard", {
+      opacity: 100,
+      y: 0,
+      ease: "power4.in",
+      duration: 1,
+      delay: 4,
+      scrollTrigger: {
+        trigger: ".content",
+        start: "-100px center",
+        end: "200px center",
+        scrub: 0.5,
+        markers: false,
+      },
+    });
+    gsap.from("#thirdCard", { opacity: 0, y: 75 });
+    gsap.to("#thirdCard", {
+      opacity: 100,
+      y: 0,
+      ease: "power4.in",
+      duration: 1,
+      delay: 8,
+      scrollTrigger: {
+        trigger: ".content",
+        start: "-100px center",
+        end: "200px center",
+        scrub: 0.5,
+        markers: false,
+      },
+    });
+  };
 
   useEffect(() => {
     handleAnimation();
@@ -51,8 +72,8 @@ const Features = () => {
           <div className="center">
             <h3>Jouer</h3>
             <p>
-              Place le plus de pixels tout au long de la partie pour tenter
-              de remporter la récompense ! Une seule règle : un pixel est
+              Place le plus de pixels tout au long de la partie pour tenter de
+              remporter la récompense ! Une seule règle : un pixel est
               personnel, vous pouvez placer un pixel toutes les minutes maximum
             </p>
           </div>
@@ -74,8 +95,8 @@ const Features = () => {
             <h3>Gagner du terrain</h3>
             <p>
               Pour être éligible au tirage au sort et tenter de gagner le lot
-              gagnant, il te faudra gagner au moins 10 coins au cours de la semaine
-              de jeu !
+              gagnant, il te faudra gagner au moins 10 coins au cours de la
+              semaine de jeu !
             </p>
           </div>
         </div>
