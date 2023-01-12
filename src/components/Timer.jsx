@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Timer = () => {
-    const [hours, setHours] = useState(0)
-    const [minutes, setMinutes] = useState(0)
-    const [seconds, setSeconds] = useState(0)
+const Timer = ({hours, minutes, seconds, setHours, setMinutes, setSeconds}) => {
 
     const deadline = '13 Jan 2023 12:00:00 GMT' // GMT = notre heure - 1 heure
 
@@ -38,7 +35,7 @@ const Timer = () => {
     }, [])
     return ( 
         <div id="timer">
-            <span>{hours} : {minutes} : {seconds}</span>
+            {hours < '00' && minutes < '00' && seconds < '00' ? <span>00 : 00 : 00</span> : <span>{hours} : {minutes} : {seconds}</span>}
         </div>
     );
 }
