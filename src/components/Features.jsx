@@ -3,6 +3,8 @@ import smiley from "../assets/icons/smiley.png";
 import ghost from "../assets/icons/ghost.png";
 import { useRef, useEffect } from "react";
 import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger);
 
 const Features = () => {
   const firstCard = useRef(null);
@@ -10,9 +12,27 @@ const Features = () => {
   const thirdCard = useRef(null);
 
   const handleAnimation = () => {
-    gsap.fromTo(firstCard.current, {opacity: 0}, {opacity: 100, ease:"power4.in", duration:2});
-    gsap.fromTo(secondCard.current, {opacity: 0}, {opacity: 100, ease:"power4.in", duration:2, delay: 0.5});
-    gsap.fromTo(thirdCard.current, {opacity: 0}, {opacity: 100, ease:"power4.in", duration:2, delay:1});
+    gsap.to("#firstCard", {opacity: 100, ease:"power4.in", duration:2, scrollTrigger: {
+      trigger: '#firstCard',
+      start: '0px center',
+      end: '300px center',
+      scrub:0.5,
+      markers: true,
+    }});
+    gsap.to("#secondCard", {opacity: 100, ease:"power4.in", duration:2, delay:1, scrollTrigger: {
+      trigger: '#secondCard',
+      start: '0px center',
+      end: '300px center',
+      scrub:0.5,
+      markers: true,
+    }});
+    gsap.to("#thirdCard", {opacity: 100, ease:"power4.in", duration:2, delay:2, scrollTrigger: {
+      trigger: '#thirdCard',
+      start: '0px center',
+      end: '300px center',
+      scrub:0.5,
+      markers: true,
+    }});
   }
 
   useEffect(() => {
@@ -23,7 +43,7 @@ const Features = () => {
     <div className="content">
       <h2>Le concept</h2>
       <div className="cards">
-        <div className="card" ref={firstCard}>
+        <div className="card" ref={firstCard} id="firstCard">
           <img className="image-size " src={star} alt="" />
           <div className="center">
             <h3>Jouer</h3>
@@ -34,7 +54,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="card" ref={secondCard}>
+        <div className="card" ref={secondCard} id="secondCard">
           <img className="image-size " src={smiley} alt="" />
           <div className="center">
             <h3>Créer</h3>
@@ -45,7 +65,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="card" ref={thirdCard}>
+        <div className="card" ref={thirdCard} id="thirdCard">
           <img className="image-size " src={ghost} alt="" />
           <div className="center">
             <h3>Gagner du terrain</h3>

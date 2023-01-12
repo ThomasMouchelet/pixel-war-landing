@@ -24,10 +24,15 @@
   width: 300px;
   color: $white;
   font-size: 17px;
+  opacity: 0;
 }
 .input-form::placeholder {
   color: $white;
   font-size: 17px;
+}
+
+.form-input-submit {
+  margin: 1rem;
 }
 @media (max-width: 768px) {
   .formulaire {
