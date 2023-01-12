@@ -5,13 +5,15 @@ import Instagram from "../assets/footer/logo-instagram.png";
 import Facebook from "../assets/footer/logo-fb.png";
 
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <div className="footer">
       <div className="mobile-social-media">
         <div className="txt">
           <h2>PIXEL WAR</h2>
           <p>
-            © 2023 - Digital Event - <span>Team Pixel War</span>
+            © {year} - Digital Event - <span>Team Pixel War</span>
           </p>
         </div>
         <div className="logo">
