@@ -56,9 +56,6 @@ const Reward = () => {
     }});
   };
 
-
-
-  
   useEffect(() => {
     handleAnimation();
   }, []);

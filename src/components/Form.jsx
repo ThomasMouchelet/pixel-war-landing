@@ -108,7 +108,6 @@ const Form = () => {
         placeholder="E-mail"
         onInput={handleChange}
         ref={firstInputRef}
-        autoComplete={false}
       />
       <input
         className="input-form"
@@ -118,7 +117,6 @@ const Form = () => {
         placeholder="Username"
         onInput={handleChange}
         ref={secondInputRef}
-        autoComplete={false}
       />
       <input
         className="input-form"
@@ -129,7 +127,6 @@ const Form = () => {
         minLength={6}
         onInput={handleChange}
         ref={thirdInputRef}
-        autoComplete={false}
       />
       <button className="form-input-submit" ref={submitButtonRef}>S'inscrire</button>
 
