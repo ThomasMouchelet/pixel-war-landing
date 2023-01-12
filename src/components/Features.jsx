@@ -1,12 +1,52 @@
 import star from "../assets/icons/Star.png";
 import smiley from "../assets/icons/smiley.png";
 import ghost from "../assets/icons/ghost.png";
+import { useRef, useEffect } from "react";
+import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger);
+
 const Features = () => {
+  const firstCard = useRef(null);
+  const secondCard = useRef(null);
+  const thirdCard = useRef(null);
+
+  const handleAnimation = () => {
+    gsap.from("#firstCard", {opacity:0})
+    gsap.to("#firstCard", {opacity: 100, ease:"power4.in", duration:1, scrollTrigger: {
+      trigger: '.content',
+      start: '-100px center',
+      end: '200px center',
+      scrub:0.5,
+      markers: false,
+    }});
+    gsap.from("#secondCard", {opacity:0})
+    gsap.to("#secondCard", {opacity: 100, ease:"power4.in", duration:1, delay:4, scrollTrigger: {
+      trigger: '#conceptTitle',
+      start: '-100px center',
+      end: '200px center',
+      scrub:0.5,
+      markers: false,
+    }});
+    gsap.from("#thirdCard", {opacity:0})
+    gsap.to("#thirdCard", {opacity: 100, ease:"power4.in", duration:1, delay:8, scrollTrigger: {
+      trigger: '#thirdCard',
+      start: '-100px center',
+      end: '200px center',
+      scrub:0.5,
+      markers: false,
+    }});
+  }
+
+  useEffect(() => {
+    handleAnimation();
+  }, []);
+
   return (
     <div className="content">
-      <h2>Le concept</h2>
+      <h2 id="conceptTitle">Le concept</h2>
       <div className="cards">
-        <div className="card">
+        <div className="card" ref={firstCard} id="firstCard">
           <img className="image-size " src={star} alt="" />
           <div className="center">
             <h3>Jouer</h3>
@@ -17,7 +57,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="card">
+        <div className="card" ref={secondCard} id="secondCard">
           <img className="image-size " src={smiley} alt="" />
           <div className="center">
             <h3>Créer</h3>
@@ -28,7 +68,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="card">
+        <div className="card" ref={thirdCard} id="thirdCard">
           <img className="image-size " src={ghost} alt="" />
           <div className="center">
             <h3>Gagner du terrain</h3>
