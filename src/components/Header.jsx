@@ -9,13 +9,17 @@ const Header = () => {
   const logoRef = useRef(null);
 
   const handleAnimate = () => {
-    gsap.to(".main-img", {y: 20, ease: 'bounce.easeInOut', duration: 0.75, scrollTrigger: {
-      trigger: '.App',
+    gsap.from(".title-container", {y:-40})
+    gsap.to(".title-container", {y: 20, ease: 'bounce.easeInOut', duration: 1.2, scrollTrigger: {
+      trigger: '#header-app',
       start: '0px center',
       end: '200px center',
       scrub:1,
       markers: false,
     }})
+
+    gsap.from('.signup-btn', {opacity:0, y:-10})
+    gsap.to('.signup-btn', {opacity: 100, y:20, ease:'power4.in', duration:1, delay:1})
   };
 
   useEffect(() => {
