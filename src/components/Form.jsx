@@ -128,7 +128,7 @@ const Form = () => {
         onInput={handleChange}
         ref={thirdInputRef}
       />
-      <button className="form-input-submit" ref={submitButtonRef}>S'inscrire</button>
+      <button >S'inscrire</button>
 
       {error ? <p>Une erreur s'est produite. Veuillez réesayer plus tard 😢</p> : null}
       {success ? <p>Bienvenue ! Ton compte a bien était créé ! 🎉</p> : null}

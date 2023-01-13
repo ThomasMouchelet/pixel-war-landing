@@ -9,6 +9,7 @@ button {
   transition: all 0.3s ease-in-out;
   position: relative;
 
+  
   &::before {
     content: url("../../assets/before-btn.svg");
     position: absolute;
@@ -25,5 +26,9 @@ button {
     width: 7px;
     height: 35px;
     transform: rotate(180deg);
+  }
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
   }
 }

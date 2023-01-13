@@ -41,10 +41,13 @@ const Header = () => {
       <div className="timer-container">
         <p className="title-timer">Début de la guerre dans :</p>
         <Timer hours={hours} minutes={minutes} seconds={seconds} setHours={setHours} setMinutes={setMinutes} setSeconds={setSeconds}/>
-        <a href="#form">
-          {
-            hours < 0 && minutes < 0 && seconds < 0 ? <button>S'inscrire</button> : <button disabled={true}>Bientôt disponible</button>
-          }
+          
+        <a href="#form"><button>S'inscrire</button></a>
+          
+        <a href={hours < 0 && minutes < 0 && seconds < 0 ? `https://app.pixel-war-esd.fr` : "#"}>
+          <button disabled={hours < 0 && minutes < 0 && seconds < 0 ? false : true}>
+            Rejoindre
+          </button>
         </a>
       </div>
     </header>
