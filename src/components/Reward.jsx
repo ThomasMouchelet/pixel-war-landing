@@ -62,7 +62,7 @@ const Reward = () => {
   return (
     <div className="reward">
       <div className="left-content">
-        <h2>Gagne tes airpods</h2>
+        <h2>Gagne tes AirPods 3</h2>
         <div className="description">
           <p>Avec audio spatial personnalisé</p>
           <div className="check" ref={firstInputRef} id="firstInputRef">

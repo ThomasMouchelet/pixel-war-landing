@@ -101,6 +101,59 @@
   }
 }
 
+.twitch-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5A3E85;
+  color: $white;
+  border: none;
+  padding: 17px 20px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  text-decoration: none;
+  width: 10rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  &::before {
+    content: url("../../assets/before-btn-twitch.svg");
+    position: absolute;
+    left: -12px;
+    top: 4px;
+    width: 5px;
+    height: 35px;
+  }
+
+  &::after {
+    content: url("../../assets/before-btn-twitch.svg");
+    position: absolute;
+    right: -12px;
+    bottom: 4px;
+    width: 7px;
+    height: 35px;
+    transform: rotate(180deg);
+  }
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+}
+
+.signup-sentence {
+  color: $white;
+
+  & > a {
+    color: $main_color;
+    font-weight: 600;
+  }
+}
+
 @media screen and (max-width: 398px) {
   #header-app {
     button {

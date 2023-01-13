@@ -102,10 +102,10 @@ const Form = () => {
       </h2>
       <input
         className="input-form"
-        type="text"
+        type="email"
         name="email"
         id="name"
-        placeholder="E-mail"
+        placeholder="Adresse e-mail"
         onInput={handleChange}
         ref={firstInputRef}
       />
@@ -114,21 +114,21 @@ const Form = () => {
         type="text"
         name="username"
         id="email"
-        placeholder="Username"
+        placeholder="Pseudo"
         onInput={handleChange}
         ref={secondInputRef}
       />
       <input
         className="input-form"
-        type="text"
+        type="password"
         name="password"
         id="phone"
-        placeholder="Password"
+        placeholder="Mot de Passe"
         minLength={6}
         onInput={handleChange}
         ref={thirdInputRef}
       />
-      <button >S'inscrire</button>
+      <button className="signup-space">S'inscrire</button>
 
       {error ? <p>Une erreur s'est produite. Veuillez réesayer plus tard 😢</p> : null}
       {success ? <p>Bienvenue ! Ton compte a bien était créé ! 🎉</p> : null}
