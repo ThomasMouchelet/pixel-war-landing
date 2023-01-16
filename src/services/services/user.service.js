@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import firestoreDb from "../config/firebase.service";
 
 const userCollection = collection(firestoreDb, 'users')
@@ -13,12 +13,29 @@ const getTopUser = async (setTopUsers) => {
             }
             return user.data()
         }).sort((a, b) => b.totalScore - a.totalScore).splice(0, NUMBER_USER)
+        console.log(topUsers);
         setTopUsers(topUsers);
     } catch (error) {
         throw new Error(error)
     }
 }
 
+const listenTopUser = async (setTopUsers) => {
+    onSnapshot(userCollection, (snapshot) => {
+        snapshot.docChanges().forEach(
+          async (change) => {
+            if(change.type === "modified"){
+                getTopUser(setTopUsers)
+            }
+          },
+          (error) => {
+            throw new Error(error)
+          }
+        )
+    })
+}
+
 export {
     getTopUser,
+    listenTopUser,
 }

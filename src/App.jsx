@@ -5,7 +5,7 @@ import Reward from "./components/Reward";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import { useEffect, useState } from "react";
-import { getTopUser } from "./services/services/user.service";
+import { getTopUser, listenTopUser } from "./services/services/user.service";
 
 function App() {
 
@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     getTopUser(setTopUsers)
+    listenTopUser(setTopUsers)
   },[])
 
   return (
