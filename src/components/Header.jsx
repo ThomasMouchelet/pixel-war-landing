@@ -68,7 +68,7 @@ const Header = () => {
           }
         >
           <button
-            disabled={hours < 0 && minutes < 0 && seconds < 0 ? false : true}
+            // disabled={hours < 0 && minutes < 0 && seconds < 0 ? false : true}
           >
             Rejoindre
           </button>
