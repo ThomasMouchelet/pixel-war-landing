@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Features />
       <Reward />
-      {/* <Form /> */}
+      <Form />
       <Footer />
     </div>
   );

@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth"
-import firestoreDb from "../services/firebase.service";
 import gsap from 'gsap';
 import { useEffect } from "react";
 import { useRef } from "react";
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import { register } from "../services/services/auth.service";
 gsap.registerPlugin(ScrollTrigger);
 
 const Form = () => {
@@ -31,29 +30,34 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const auth = getAuth()
-    createUserWithEmailAndPassword(auth, credentials.email,credentials.password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      updateProfile(user, {
-        displayName: credentials.username
-      })
-      .then(() => {
-        console.log("user created successfully");
-        setCredentials({})
-        setSuccess(true)
-      })
-      .catch((error) => {
-        console.log(error.message)
-        setError(true)
-        setSuccess(false)
-      })
-    })
-    .catch((error) => {
-      console.log(error.message)
-      setError(true)
-      setSuccess(false)
-    });
+    const data = {
+      email: credentials.email,
+      username: credentials.username,
+      password: credentials.password
+    }
+    register(data, setSuccess, setError)
+    // const auth = getAuth()
+    // createUserWithEmailAndPassword(auth, credentials.email,credentials.password)
+    // .then((userCredential) => {
+    //   const user = userCredential.user;
+    //   updateProfile(user, {
+    //     displayName: credentials.username
+    //   })
+    //   .then(() => {
+    //     setCredentials({})
+    //     setSuccess(true)
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.message)
+    //     setError(true)
+    //     setSuccess(false)
+    //   })
+    // })
+    // .catch((error) => {
+    //   console.log(error.message)
+    //   setError(true)
+    //   setSuccess(false)
+    // });
   }
 
   const handleAnimation = () => {

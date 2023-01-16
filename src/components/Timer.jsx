@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Timer = ({hours, minutes, seconds, setHours, setMinutes, setSeconds}) => {
 
@@ -16,12 +16,9 @@ const Timer = ({hours, minutes, seconds, setHours, setMinutes, setSeconds}) => {
 
         let hoursResult = Math.floor((time / (1000 * 60 * 60)))
         
-
         let minutesResult = Math.floor((time / 1000 / 60) % 60)
         
-
         let secondsResult = Math.floor((time / 1000) % 60)
-        
         
         setHours(parseTime(hoursResult));
         setMinutes(parseTime(minutesResult));
