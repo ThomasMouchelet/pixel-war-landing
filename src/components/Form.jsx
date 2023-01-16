@@ -36,28 +36,6 @@ const Form = () => {
       password: credentials.password
     }
     register(data, setSuccess, setError)
-    // const auth = getAuth()
-    // createUserWithEmailAndPassword(auth, credentials.email,credentials.password)
-    // .then((userCredential) => {
-    //   const user = userCredential.user;
-    //   updateProfile(user, {
-    //     displayName: credentials.username
-    //   })
-    //   .then(() => {
-    //     setCredentials({})
-    //     setSuccess(true)
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.message)
-    //     setError(true)
-    //     setSuccess(false)
-    //   })
-    // })
-    // .catch((error) => {
-    //   console.log(error.message)
-    //   setError(true)
-    //   setSuccess(false)
-    // });
   }
 
   const handleAnimation = () => {
