@@ -35,4 +35,4 @@ const register = async (data, setSuccess, setError) => {
 
 export {
     register,
-}  
+}
