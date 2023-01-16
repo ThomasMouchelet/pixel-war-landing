@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Video from "./Video/Video";
+import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
