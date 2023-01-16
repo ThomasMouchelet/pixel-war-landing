@@ -69,8 +69,11 @@ const Header = () => {
         >
           <button
             // disabled={hours < 0 && minutes < 0 && seconds < 0 ? false : true}
+            
           >
-            Rejoindre
+            <Link to={{ pathname: "https://app.pixel-war-esd.fr/" }} target="_blank">
+              Rejoindre
+            </Link>
           </button>
         </a>
         <a
