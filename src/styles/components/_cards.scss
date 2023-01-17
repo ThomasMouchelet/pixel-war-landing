@@ -1,55 +1,68 @@
 .image-size {
   width: 35px;
   height: 35px;
-  padding-left: 20px;
-  padding-top: 25px;
 }
+
+
 .content {
   h2 {
-    font-family: $main_font;
-    margin-left: 15vw;
+    position: relative;
+    left: 20%;
+    top: 0%;
+    font-family: $main_pixel_font;
     font-size: 45px;
-    font-weight: bold;
-    color: white;
+    color: #E59E49;
   }
 }
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
 }
+
 .card {
+  position: relative;
   font-family: $main_font;
   color: white;
-  border: 1px wheat solid;
+  height: 350px;
+  width: 25%;
 
-  height: 450px;
-  width: 350px;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(to bottom, $main-color, #979107);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 
-  border: 1px solid;
-  border-image-slice: 1;
-  border-radius: 15px;
-  border-image-source: linear-gradient(
-    to bottom,
-    $main_color,
-    #979107,
-    $background_color
-  );
 
   h3 {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     text-align: center;
   }
+
   p {
     font-size: 19px;
     line-height: 1.6;
+    margin: 0;
   }
 }
+
 .center {
   padding: 0 40px;
 }
