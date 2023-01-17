@@ -24,9 +24,7 @@ const listenTopUser = async (setTopUsers) => {
     onSnapshot(userCollection, (snapshot) => {
         snapshot.docChanges().forEach(
           async (change) => {
-            if(change.type === "modified"){
-                getTopUser(setTopUsers)
-            }
+            getTopUser(setTopUsers)
           },
           (error) => {
             throw new Error(error)

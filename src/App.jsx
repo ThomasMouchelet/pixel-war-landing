@@ -12,8 +12,8 @@ function App() {
   const [topUsers, setTopUsers] = useState([])
 
   useEffect(() => {
-    getTopUser(setTopUsers)
     listenTopUser(setTopUsers)
+    console.log(topUsers);
   },[])
 
   return (
