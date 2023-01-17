@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Form from "./components/Form";
 import { useEffect, useState } from "react";
 import { getTopUser, listenTopUser } from "./services/services/user.service";
+import Team from "./components/Team";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Header />
       <Features />
       <Reward />
+      <Team />
       <Form />
       <Footer />
     </div>

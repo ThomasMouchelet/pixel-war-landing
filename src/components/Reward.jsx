@@ -101,9 +101,9 @@ const Reward = () => {
   // }, []);
   return (
     <div className="reward">
-      <div className="row">
+      <div className="row ranking-row">
         <div className="left-reward">
-          <div className="column">
+          <div className="column rank-column">
             <h2 className="rank-title">Classement</h2>
             <p>
               Défi tes amis et tente de te classer au top du classement. Si tu
