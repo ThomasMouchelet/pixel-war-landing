@@ -13,7 +13,6 @@ const getTopUser = async (setTopUsers, number) => {
             }
             return user.data()
         }).sort((a, b) => b.totalScore - a.totalScore).splice(0, NUMBER_USER)
-        // console.log(topUsers);
         if(NUMBER_USER === 3){
             const arr = [topUsers[1], topUsers[0], topUsers[2]]
             return setTopUsers(arr);
@@ -25,40 +24,6 @@ const getTopUser = async (setTopUsers, number) => {
     }
 }
 
-const getTopThreeUser = async (setTopUsers) => {
-    const NUMBER_USER = 3
-    try {
-        const users = await getDocs(userCollection)
-        const topUsers = users.docs.map(user => {
-            if(user.data().email === 'admin@admin.com') {
-                return user.totalScore = 0
-            }
-            return user.data()
-        }).sort((a, b) => b.totalScore - a.totalScore).splice(0, NUMBER_USER)
-        const arr = [topUsers[1], topUsers[0], topUsers[2]]
-        setTopUsers(arr);
-    } catch (error) {
-        throw new Error(error)
-    }
-}
-
-const listenTopUser = async (setTopUsers) => {
-    onSnapshot(userCollection, (snapshot) => {
-        snapshot.docChanges().forEach(
-          async (change) => {
-            if(change.type === 'modified'){
-                getTopUser(setTopUsers, 5)
-            }
-          },
-          (error) => {
-            throw new Error(error)
-          }
-        )
-    })
-}
-
 export {
     getTopUser,
-    getTopThreeUser,
-    listenTopUser,
 }

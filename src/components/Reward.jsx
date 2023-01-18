@@ -1,9 +1,8 @@
 import airpods3 from "../assets/Airpods.png";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
-import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getTopUser, listenTopUser } from "../services/services/user.service";
+import { getTopUser } from "../services/services/user.service";
 gsap.registerPlugin(ScrollTrigger);
 
 const Reward = () => {
@@ -11,8 +10,6 @@ const Reward = () => {
 
   useEffect(() => {
     getTopUser(setLastUsers, 5);
-    listenTopUser(setLastUsers);
-    console.log('last => ', lastUsers);
   }, []);
 
   useEffect(() => {
