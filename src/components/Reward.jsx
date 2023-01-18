@@ -7,15 +7,17 @@ import { getTopUser, listenTopUser } from "../services/services/user.service";
 gsap.registerPlugin(ScrollTrigger);
 
 const Reward = () => {
-  const [lastUsers, setLastUsers] = useState([]);
+  const [lastUsers, setLastUsers] = useState(null);
 
   useEffect(() => {
     getTopUser(setLastUsers, 5);
     listenTopUser(setLastUsers);
-    if (lastUsers) {
-      console.log(lastUsers);
-    }
+    console.log('last => ', lastUsers);
   }, []);
+
+  useEffect(() => {
+    console.log('last => ', lastUsers);
+  }, [lastUsers]);
 
   const handleAnimation = () => {
     gsap.from(".right-content", { opacity: 0 });
@@ -107,9 +109,9 @@ const Reward = () => {
             </p>
 
             <div className="reward-ranking">
-              {lastUsers &&
-                lastUsers.map((user, index) => (
-                  <div className="reward-ranking-item">
+              {lastUsers
+                ? lastUsers.map((user, index) => (
+                  <div className="reward-ranking-item" key={user.uid}>
                     <div className="rank-number">
                       {index + 1}
                       <span>{index > 0 ? "ème" : "er"}</span>
@@ -119,7 +121,9 @@ const Reward = () => {
                       {user.totalScore} Pixels
                     </span>
                   </div>
-                ))}
+                ))
+                : null
+              }
             </div>
           </div>
         </div>

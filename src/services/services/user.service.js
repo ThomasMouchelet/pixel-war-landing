@@ -14,7 +14,12 @@ const getTopUser = async (setTopUsers, number) => {
             return user.data()
         }).sort((a, b) => b.totalScore - a.totalScore).splice(0, NUMBER_USER)
         // console.log(topUsers);
-        setTopUsers(topUsers);
+        if(NUMBER_USER === 3){
+            const arr = [topUsers[1], topUsers[0], topUsers[2]]
+            return setTopUsers(arr);
+        }else{
+            setTopUsers(topUsers);
+        }
     } catch (error) {
         throw new Error(error)
     }
@@ -42,7 +47,7 @@ const listenTopUser = async (setTopUsers) => {
     onSnapshot(userCollection, (snapshot) => {
         snapshot.docChanges().forEach(
           async (change) => {
-            getTopUser(setTopUsers)
+            getTopUser(setTopUsers, 5)
           },
           (error) => {
             throw new Error(error)
