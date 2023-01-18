@@ -1,7 +1,7 @@
 .rank-title {
   font-size: 48px;
   font-family: $main_pixel_font;
-  color: #E59E49;
+  color: #e59e49;
   margin: 0;
 }
 
@@ -17,8 +17,15 @@
   gap: 50px;
   color: #ffffff;
 
+  @media all and (min-width: 769px) {
+    .left-reward {
+      width: 60%;
+      height: 100%;
+    }
+  }
+
   .left-reward {
-    width: 60%;
+    width: 90%;
     height: 100%;
 
     .column {
@@ -38,7 +45,6 @@
       flex-direction: column;
       gap: 25px;
 
-
       .reward-ranking-item {
         background-color: #272727;
         border-radius: 7px;
@@ -47,29 +53,38 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 300px;
+
+        @media all and (min-width: 769px) {
+          .reward-ranking-item {
+            gap: 300px;
+          }
+
+          .rank-name {
+            padding-left: 63px;
+          }
+        }
 
         &:nth-child(1) {
           .rank-number {
-            background-color: #E16B3E;
+            background-color: #e16b3e;
           }
         }
 
         &:nth-child(2) {
           .rank-number {
-            background-color: #9D6891;
+            background-color: #9d6891;
           }
         }
 
         &:nth-child(3) {
           .rank-number {
-            background-color: #E59E49;
+            background-color: #e59e49;
           }
         }
 
         &:nth-child(4) {
           .rank-number {
-            background-color: #E27D41;
+            background-color: #e27d41;
           }
         }
 
@@ -79,17 +94,11 @@
           }
         }
 
-        .rank-name {
-          padding-left: 63px;
-        }
-
         .rank-name,
         .rank-pixels {
           font-family: $main_font;
           font-weight: 700;
         }
-
-
 
         .rank-number {
           position: absolute;
@@ -106,9 +115,6 @@
           display: flex;
           align-items: center;
           justify-content: center;
-
-
-
 
           span {
             font-size: 10px;
@@ -131,7 +137,11 @@
       height: 100%;
       z-index: 1;
       border-radius: 50%;
-      background: radial-gradient(46.46% 46.46% at 50% 50%, #3E0095 0%, rgba(108, 77, 151, 0) 100%);
+      background: radial-gradient(
+        46.46% 46.46% at 50% 50%,
+        #3e0095 0%,
+        rgba(108, 77, 151, 0) 100%
+      );
     }
 
     img {
@@ -144,26 +154,63 @@
 @media (max-width: 768px) {
   .reward {
     height: 100vh;
+    width: 100vw;
     gap: 0;
   }
 
-  .left-content h2 {
-    text-align: center;
-  }
-
-  .check {
-    display: flex;
-    align-items: center;
-  }
-
-  .description {
-    text-align: center;
+  .row {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .valide {
-    display: none;
+  .ranking-row {
+    height: 50rem;
+  }
+
+  .right-reward {
+    width: 100%;
+  }
+
+  .right-reward > img {
+    width: 80vw;
+  }
+
+  .right-reward {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reward-ranking {
+    width: 85%;
+  }
+
+  .reward-ranking-item {
+    background-color: #272727;
+    border-radius: 7px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .rank-name {
+    padding-left: 2rem;
+  }
+
+  .rank-column {
+    width: 100%;
+  }
+
+  .rank-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-reward {
+    width: 100%;
   }
 }

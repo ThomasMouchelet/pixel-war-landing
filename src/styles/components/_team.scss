@@ -1,0 +1,143 @@
+.team-container {
+    color: white;
+    margin: 12rem 16rem 0 16rem;
+}
+
+.creations-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.creations-container > h4 {
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.podium-container {
+    display: flex;
+    width: 100%;
+    height: 30rem;
+}
+
+.podium-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 65%;
+    height: 100%;
+}
+.podium-right {
+    width: 35%;
+    height: 100%;
+}
+
+.podium-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    padding: 0 5%;
+    height: 100%;
+}
+
+.podium-left > img {
+    width: 75%;
+}
+
+.podium-shadow {
+    position: absolute;
+    z-index: -1;
+    background-color: #B88DF4;
+    box-shadow: 35px 4px 109px #B88DF4;
+    width: 30%;
+    height: 5rem;
+}
+
+.podium-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 75%;
+    height: 1rem;
+}
+
+.userNumber:nth-child(2) {
+    margin-bottom: 2rem;
+}
+.userNumber:nth-child(1)  {
+    margin-top: 3rem;
+}
+.userNumber:nth-child(3)  {
+    margin-top: 5rem;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    width: 20rem;
+    margin-bottom: 4rem;
+}
+
+.imgScreen {
+    height: 20rem;
+    width: 20rem;
+}
+
+@media all and (max-width: 768px) {
+    .team-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        margin-top: 45rem;
+    }
+
+    .podium-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .podium-left {
+        width: 100%;
+    }
+
+    .podium-right {
+        width: 100%;
+    }
+
+    .rank-title {
+        font-size: 2rem;
+    }
+
+    .podium-shadow {
+        height: 3.5rem;
+        display: none;
+    }
+
+    .podium-text {
+        padding: 1rem;
+    }
+
+    .imgScreen {
+        width: 10rem;
+    }
+
+    .slider {
+        display: flex;
+        overflow: hidden;
+        overflow-x: scroll;
+        width: 15rem;
+        margin-bottom: 2rem;
+    }
+    
+    .imgScreen {
+        height: 15rem;
+        width: 15rem;
+    }
+}
