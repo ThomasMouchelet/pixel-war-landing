@@ -7,7 +7,7 @@ import screen3 from "../assets/screen3.jpg";
 import screen4 from "../assets/screen4.jpg";
 
 const Team = () => {
-  const [lastUsers, setLastUsers] = useState([]);
+  const [lastUsers, setLastUsers] = useState(null);
 
   useEffect(() => {
     getTopUser(setLastUsers, 3);
