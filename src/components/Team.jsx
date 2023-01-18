@@ -11,9 +11,6 @@ const Team = () => {
 
   useEffect(() => {
     getTopUser(setLastUsers, 3);
-    if (lastUsers) {
-      console.log(lastUsers);
-    }
   }, []);
 
   return (

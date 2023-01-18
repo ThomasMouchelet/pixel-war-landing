@@ -10,13 +10,6 @@ import Team from "./components/Team";
 
 function App() {
 
-  const [topUsers, setTopUsers] = useState([])
-
-  useEffect(() => {
-    listenTopUser(setTopUsers)
-    console.log(topUsers);
-  },[])
-
   return (
     <div className="App">
       <Header />

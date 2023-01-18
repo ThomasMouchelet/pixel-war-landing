@@ -35,7 +35,6 @@ const getTopThreeUser = async (setTopUsers) => {
             }
             return user.data()
         }).sort((a, b) => b.totalScore - a.totalScore).splice(0, NUMBER_USER)
-        // console.log(topUsers);
         const arr = [topUsers[1], topUsers[0], topUsers[2]]
         setTopUsers(arr);
     } catch (error) {
