@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import podium from "../assets/podium.png";
-import { getTopThreeUser } from "../services/services/user.service";
+import { getTopUser } from "../services/services/user.service";
 import screen1 from "../assets/screen1.jpg";
 import screen2 from "../assets/screen2.jpg";
 import screen3 from "../assets/screen3.jpg";
@@ -10,8 +10,7 @@ const Team = () => {
   const [lastUsers, setLastUsers] = useState([]);
 
   useEffect(() => {
-    getTopThreeUser(setLastUsers);
-    // getLastUsers();
+    getTopUser(setLastUsers, 3);
     if (lastUsers) {
       console.log(lastUsers);
     }

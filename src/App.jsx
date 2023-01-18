@@ -5,7 +5,7 @@ import Reward from "./components/Reward";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import { useEffect, useState } from "react";
-import { getTopUser, listenTopUser } from "./services/services/user.service";
+import { listenTopUser } from "./services/services/user.service";
 import Team from "./components/Team";
 
 function App() {

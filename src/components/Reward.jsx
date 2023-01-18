@@ -9,15 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 const Reward = () => {
   const [lastUsers, setLastUsers] = useState([]);
 
-  // const getLastUsers = async () => {
-  //   const response = await getTopUser(setLastUsers);
-  //   console.log("response", response);
-  // };
-
   useEffect(() => {
-    getTopUser(setLastUsers);
+    getTopUser(setLastUsers, 5);
     listenTopUser(setLastUsers);
-    // getLastUsers();
     if (lastUsers) {
       console.log(lastUsers);
     }

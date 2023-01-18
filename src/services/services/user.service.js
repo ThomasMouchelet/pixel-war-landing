@@ -3,8 +3,8 @@ import firestoreDb from "../config/firebase.service";
 
 const userCollection = collection(firestoreDb, 'users')
 
-const getTopUser = async (setTopUsers) => {
-    const NUMBER_USER = 5
+const getTopUser = async (setTopUsers, number) => {
+    const NUMBER_USER = number
     try {
         const users = await getDocs(userCollection)
         const topUsers = users.docs.map(user => {
