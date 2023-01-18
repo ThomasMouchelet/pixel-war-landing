@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const Timer = ({hours, minutes, seconds, setHours, setMinutes, setSeconds}) => {
 
-    const deadline = '16 Jan 2023 12:00:00 GMT' // GMT = notre heure - 1 heure
+    const deadline = '18 Jan 2023 9:30:00 GMT' // GMT = notre heure - 1 heure
 
     const parseTime = (result) => {
         if(result < 10) {
