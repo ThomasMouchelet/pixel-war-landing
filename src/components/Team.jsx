@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import podium from "../assets/podium.png";
 import { getTopThreeUser } from "../services/services/user.service";
+import screen1 from "../assets/screen1.jpg";
+import screen2 from "../assets/screen2.jpg";
+import screen3 from "../assets/screen3.jpg";
+import screen4 from "../assets/screen4.jpg";
 
 const Team = () => {
   const [lastUsers, setLastUsers] = useState([]);
@@ -20,11 +24,21 @@ const Team = () => {
           <h2 className="rank-title">Les équipes</h2>
           <div className="creations-container">
             <h4>Vos créations</h4>
+            <div className="slider">
+              <img src={screen1} alt="" className="imgScreen" />
+              <img src={screen2} alt="" className="imgScreen" />
+              <img src={screen3} alt="" className="imgScreen" />
+              <img src={screen4} alt="" className="imgScreen" />
+            </div>
           </div>
           <div className="podium-container">
             <div className="podium-left">
               <div className="podium-user">
-                {lastUsers.map((user, index) => <p key={index} className="userNumber">{user.username}</p>)}
+                {lastUsers.map((user, index) => (
+                  <p key={index} className="userNumber">
+                    {user.username}
+                  </p>
+                ))}
               </div>
               <img src={podium} alt="" />
               <div className="podium-shadow"></div>

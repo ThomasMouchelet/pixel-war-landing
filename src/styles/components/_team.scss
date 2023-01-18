@@ -74,6 +74,19 @@
     margin-top: 5rem;
 }
 
+.slider {
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    width: 20rem;
+    margin-bottom: 4rem;
+}
+
+.imgScreen {
+    height: 20rem;
+    width: 20rem;
+}
+
 @media all and (max-width: 768px) {
     .team-container {
         display: flex;
@@ -109,5 +122,22 @@
 
     .podium-text {
         padding: 1rem;
+    }
+
+    .imgScreen {
+        width: 10rem;
+    }
+
+    .slider {
+        display: flex;
+        overflow: hidden;
+        overflow-x: scroll;
+        width: 15rem;
+        margin-bottom: 2rem;
+    }
+    
+    .imgScreen {
+        height: 15rem;
+        width: 15rem;
     }
 }
